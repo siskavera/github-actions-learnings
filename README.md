@@ -1,4 +1,4 @@
-# github-actions-learnings
+# Implicit and explicit job dependencies in GitHub Actions
 This repository is to showcase some learnings about GitHub actions
 
 Our GitHub [workflows](https://docs.github.com/en/actions/using-workflows/about-workflows) 
