@@ -15,9 +15,7 @@ A job's dependencies can also have their own dependencies. In this case, the job
 
 ## Status of implicit dependencies affects job flow
 If a job in a workflow has a dependency whose exit status is not "success", it will be skipped by default. 
-For a job with implicit dependencies, this is true even for these implicit dependencies, 
-meaning that it can be skipped even if all explicitly declared dependencies finished successfully. 
-This behavior can be overwritten using the "always()" condition, forcing the job to be executed no matter what. 
+For a job with implicit dependencies, this is true even for those, meaning that the job may be skipped even if all explicitly declared dependencies finished successfully. This behavior can be overwritten using the "always()" condition, forcing the job to be executed no matter what. 
 If some conditions are in fact needed, they can be chained after the "always()" condition.
 
 Here is a showcase for this behavior. If you'd like to see that this is indeed what happens, 
