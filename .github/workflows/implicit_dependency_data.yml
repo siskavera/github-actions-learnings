@@ -1,0 +1,37 @@
+name: Data from implicit dependencies is only available in the if block
+
+on: workflow_dispatch
+
+jobs:
+  implicit-dependency:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print information
+        run: echo "This is the first job, an implicit dependency"
+
+  explicit-dependency:
+    runs-on: ubuntu-latest
+    needs: implicit-dependency
+    steps:
+      - name: Print information
+        run: echo "This is the second job, an explicit dependency"
+  
+  run:
+    runs-on: ubuntu-latest
+    needs: explicit-dependency
+    if: needs.implicit-dependency.status == 'success'
+    steps:
+      - name: Print information
+        run: |
+          echo "This job will run, but data from the implicit dependency is not available."
+          echo "Implicit dependency status: ${needs.implicit-dependency.status}."
+          echo "Explicit dependency status: ${needs.explicit-dependency.status}."
+  
+  skipped:
+    runs-on: ubuntu-latest
+    needs: explicit-dependency
+    if: needs.implicit-dependency.status == 'failure'
+    steps:
+      - name: Print information
+        run: |
+          echo "This job will not run, since implicit dependency did not fail."
