@@ -6,8 +6,7 @@ consist of [jobs](https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-
 We use [reusable workflows](https://docs.github.com/en/actions/using-workflows/reusing-workflows) for most of our jobs, 
 to achieve a modular structure. While steps within a job run sequentially, jobs within a workflow are parallel by default. 
 Our jobs depend on each other, so we also made use of GitHub Actions's features to control job execution 
-to decide how exactly and which jobs are run for a given workflow. Among others, we defined [dependencies between jobs]
-(https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#defining-prerequisite-jobs) 
+to decide how exactly and which jobs are run for a given workflow. Among others, we defined [dependencies between jobs](https://docs.github.com/en/actions/using-jobs/using-jobs-in-a-workflow#defining-prerequisite-jobs) 
 and [conditions](https://docs.github.com/en/actions/using-jobs/using-conditions-to-control-job-execution) under which a certain job should be executed. 
 Often, these conditions include [status checks](https://docs.github.com/en/actions/learn-github-actions/expressions#status-check-functions), 
 referring to the status of the previous job(s). 
