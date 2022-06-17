@@ -24,8 +24,8 @@ jobs:
       - name: Print information
         run: |
           echo "This job will run, but data from the implicit dependency is not available."
-          echo "Explicit dependency status: ${needs.explicit-dependency.result}."
-          echo "Implicit dependency status: ${needs.implicit-dependency.result}."
+          echo "Explicit dependency status: ${{ needs.explicit-dependency.result }}."
+          echo "Implicit dependency status: ${{ needs.implicit-dependency.result }}."
   
   skipped:
     runs-on: ubuntu-latest
