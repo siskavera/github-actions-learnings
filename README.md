@@ -11,9 +11,7 @@ and [conditions](https://docs.github.com/en/actions/using-jobs/using-conditions-
 Often, these conditions include [status checks](https://docs.github.com/en/actions/learn-github-actions/expressions#status-check-functions), 
 referring to the status of the previous job(s). 
 
-
-A job can depend on other jobs with their own dependencies. In this case, the job will also depend on these implicit dependencies, but there are some particularities about that, two of which are the topic of this blogpost.
-
+A job's dependencies can also have their own dependencies. In this case, the job will also wait for and have information about these implicit dependencies, but there are some particularities about that, two of which are the topic of this blogpost.
 
 ## Status of implicit dependencies affects job flow
 If a job in a workflow has a dependency whose exit status is not "success", it will be skipped by default. 
