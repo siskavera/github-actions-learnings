@@ -24,8 +24,8 @@ you can take a look here: https://github.com/veronikasiska/github-actions-learni
 ## Data from implicit dependencies only available in "if" block
 A related issue is the visibility of data from implicit dependencies. In GitHub actions, information can be accessed via contexts. 
 If a job has dependencies, they get access to the outputs and exit status of all jobs they depend on via the needs context. 
-For implicit dependencies, this only applies for the "if" block, for other cases (e.g. "run" block or as inputs to reusable workflows) 
-they need to be declared as explicit dependencies. 
+For implicit dependencies, this only applies for the "if" block: if information about dependencies is needed at other parts 
+(e.g. "run" block or as inputs to reusable workflows) they need to be declared as explicit dependencies. 
 
 Here is a showcase for this behavior. If you'd like to see that this is indeed what happens, 
 you can take a look here: https://github.com/veronikasiska/github-actions-learnings/runs/6936865645
