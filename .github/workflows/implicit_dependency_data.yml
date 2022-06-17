@@ -19,7 +19,7 @@ jobs:
   run:
     runs-on: ubuntu-latest
     needs: explicit-dependency
-    if: needs.implicit-dependency.status == 'success'
+    if: needs.implicit-dependency.result == 'success'
     steps:
       - name: Print information
         run: |
@@ -30,7 +30,7 @@ jobs:
   skipped:
     runs-on: ubuntu-latest
     needs: explicit-dependency
-    if: needs.implicit-dependency.status == 'failure'
+    if: needs.implicit-dependency.result == 'failure'
     steps:
       - name: Print information
         run: |
