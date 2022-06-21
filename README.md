@@ -28,4 +28,4 @@ For implicit dependencies, this only applies for the "if" block: if information 
 (e.g. "run" block or as inputs to reusable workflows) they need to be declared as explicit dependencies. 
 
 Here is a showcase for this behavior. If you'd like to see that this is indeed what happens, 
-you can take a look here: https://github.com/veronikasiska/github-actions-learnings/runs/6936865645
+you can take a look here: [https://github.com/veronikasiska/github-actions-learnings/runs/6936865645](https://github.com/veronikasiska/github-actions-learnings/actions/runs/2515886088)
